@@ -1,0 +1,159 @@
+{% extends 'ChampData/theme.html' %}
+
+{% block container %}
+      <h1 style="text-align: center;">Champion Comparison</h1>
+        {% if champion1 %}
+	 {% if champion2 %}
+          <table class="table table-hover">
+           <tr><th><h4>Name:</h4></th>
+		<td><h4><h4>{{ champion1.name }}</h4></td>
+		<td><h4>{{ champion2.name }}</h4></td></tr>
+            <tr><th><h4>Health:</h4></th>
+		<td><h4>{{ champion1.hp }}</h4></td>
+		<td><h4>{{ champion2.hp }}</h4></td>
+		{% if difference.0 < 0 %}
+			<td><h4><b style="color: red;">{{ difference.0 }}</b></h4></td></tr>
+		{% else %}
+			<td><h4><b style="color: green;">{{ difference.0 }}</b></h4></td></tr>
+		{% endif %}
+            <tr><th><h4>Health per level:</h4></th>
+		<td><h4>{{ champion1.hpPlus }}</h4></td>
+		<td><h4>{{ champion2.hpPlus }}</h4></td>
+		{% if difference.1 < 0 %}
+                        <td><h4><b style="color: red;">{{ difference.1 }}</b></h4></td></tr>
+                {% else %}
+                        <td><h4><b style="color: green;">{{ difference.1 }}</b></h4></td></tr>
+                {% endif %}
+            <tr><th><h4>Health Regen per 5:</h4></th>
+		<td><h4>{{ champion1.hp5 }}</h4></td>
+		<td><h4>{{ champion2.hp5 }}</h4></td>
+		{% if difference.2 < 0 %}
+                        <td><h4><b style="color: red;">{{ difference.2 }}</b></h4></td></tr>
+                {% else %}
+                        <td><h4><b style="color: green;">{{ difference.2 }}</b></h4></td></tr>
+                {% endif %}
+            <tr><th><h4>Health Regen per 5 per level:</h4></th>
+		<td><h4>{{ champion1.hp5Plus }}</h4></td>
+		<td><h4>{{ champion2.hp5Plus}}</h4></td>
+		{% if difference.3 < 0 %}
+                        <td><h4><b style="color: red;">{{ difference.3 }}</b></h4></td></tr>
+                {% else %}
+                        <td><h4><b style="color: green;">{{ difference.3 }}</b></h4></td></tr>
+                {% endif %}
+            <tr><th><h4>Mana:</h4></th>
+		<td><h4>{{ champion1.mp }}</h4></td>
+		<td><h4>{{ champion2.mp }}</h4></td>
+		{% if difference.4 < 0 %}
+                        <td><h4><b style="color: red;">{{ difference.4 }}</b></h4></td></tr>
+                {% else %}
+                        <td><h4><b style="color: green;">+{{ difference.4 }}</b></h4></td></tr>
+                {% endif %}
+            <tr><th><h4>Mana per level:</h4></th>
+		<td><h4>{{ champion1.mpPlus }}</h4></td>
+		<td><h4>{{ champion2.mpPlus }}</h4></td>
+		{% if difference.5 < 0 %}
+                        <td><h4><b style="color: red;">{{ difference.5 }}</b></h4></td></tr>
+                {% else %}
+                        <td><h4><b style="color: green;">{{ difference.5 }}</b></h4></td></tr>
+                {% endif %}
+            <tr><th><h4>Mana regen per 5:</h4></th>
+		<td><h4>{{ champion1.mp5 }}</h4></td>
+		<td><h4>{{ champion2.mp5 }}</h4></td>
+		{% if difference.6 < 0 %}
+                        <td><h4><b style="color: red;">{{ difference.6 }}</b></h4></td></tr>
+                {% else %}
+                        <td><h4><b style="color: green;">{{ difference.6 }}</b></h4></td></tr>
+                {% endif %}
+            <tr><th><h4>Mana regen per 5 per level:</h4></th>
+		<td><h4>{{ champion1.mp5Plus }}</h4></td>
+		<td><h4>{{ champion2.mp5Plus }}</h4></td>
+		{% if difference.7 < 0 %}
+                        <td><h4><b style="color: red;">{{ difference.7 }}</b></h4></td></tr>
+                {% else %}
+                        <td><h4><b style="color: green;">{{ difference.7 }}</b></h4></td></tr>
+                {% endif %}
+            <tr><th><h4>Attack Damage:</h4></th>
+		<td><h4>{{ champion1.ad }}</h4></td>
+		<td><h4>{{ champion2.ad }}</h4></td>
+		{% if difference.8 < 0 %}
+                        <td><h4><b style="color: red;">{{ difference.8 }}</b></h4></td></tr>
+                {% else %}
+                        <td><h4><b style="color: green;">{{ difference.8 }}</b></h4></td></tr>
+                {% endif %}
+            <tr><th><h4>Attack Damage per level:</h4></th>
+		<td><h4>{{ champion1.adPlus }}</h4></td>
+		<td><h4>{{ champion2.adPlus }}</h4></td>
+		{% if difference.9 < 0 %}
+                        <td><h4><b style="color: red;">{{ difference.9 }}</b></h4></td></tr>
+                {% else %}
+                        <td><h4><b style="color: green;">{{ difference.9 }}</b></h4></td></tr>
+                {% endif %}
+            <tr><th><h4>Attack Speed:</h4></th>
+		<td><h4>{{ champion1.aSpeed }}</h4></td>
+		<td><h4>{{ champion2.aSpeed }}</h4></td>
+		{% if difference.10 < 0 %}
+                        <td><h4><b style="color: red;">{{ difference.10 }}</b></h4></td></tr>
+                {% else %}
+                        <td><h4><b style="color: green;">{{ difference.10 }}</b></h4></td></tr>
+                {% endif %}
+            <tr><th><h4>Attack Speed per level:</h4></th>
+		<td><h4>{{ champion1.asPlus }}</h4></td>
+		<td><h4>{{ champion2.asPlus }}</h4></td>
+		{% if difference.11 < 0 %}
+                        <td><h4><b style="color: red;">{{ difference.11 }}</b></h4></td></tr>
+                {% else %}
+                        <td><h4><b style="color: green;">{{ difference.11 }}</b></h4></td></tr>
+                {% endif %}
+            <tr><th><h4>Armor:</h4></th>
+		<td><h4>{{ champion1.ar }}</h4></td>
+		<td><h4>{{ champion2.ar }}</h4></td>
+		{% if difference.12 < 0 %}
+                        <td><h4><b style="color: red;">{{ difference.12 }}</b></h4></td></tr>
+                {% else %}
+                        <td><h4><b style="color: green;">{{ difference.12 }}</b></h4></td></tr>
+                {% endif %}
+            <tr><th><h4>Armor per level:</h4></th>
+		<td><h4>{{ champion1.arPlus }}</h4></td>
+		<td><h4>{{ champion2.arPlus }}</h4></td>
+		{% if difference.13 < 0 %}
+                        <td><h4><b style="color: red;">{{ difference.13 }}</b></h4></td></tr>
+                {% else %}
+                        <td><h4><b style="color: green;">{{ difference.13 }}</b></h4></td></tr>
+                {% endif %}
+            <tr><th><h4>Magic Resist:</h4></th>
+		<td><h4>{{ champion1.mr }}</h4></td>
+		<td><h4>{{ champion2.mr }}</h4></td>
+		{% if difference.14 < 0 %}
+                        <td><h4><b style="color: red;">{{ difference.14 }}</b></h4></td></tr>
+                {% else %}
+                        <td><h4><b style="color: green;">{{ difference.14 }}</b></h4></td></tr>
+                {% endif %}
+            <tr><th><h4>Magic Resist per level:</h4></th>
+		<td><h4>{{ champion1.mrPlus }}</h4></td>
+		<td><h4>{{ champion2.mrPlus }}</h4></td>
+		{% if difference.15 < 0 %}
+                        <td><h4><b style="color: red;">{{ difference.15 }}</b></h4></td></tr>
+                {% else %}
+                        <td><h4><b style="color: green;">{{ difference.15 }}</b></h4></td></tr>
+                {% endif %}
+            <tr><th><h4>Movement Speed:</h4></th>
+		<td><h4>{{ champion1.ms }}</h4></td>
+		<td><h4>{{ champion2.ms }}</h4></td>
+		{% if difference.16 < 0 %}
+                        <td><h4><b style="color: red;">{{ difference.16 }}</b></h4></td></tr>
+                {% else %}
+                        <td><h4><b style="color: green;">{{ difference.16 }}</b></h4></td></tr>
+                {% endif %}
+            <tr><th><h4>Attack Range:</h4></th>
+		<td><h4>{{ champion1.adRange }}</h4></td>
+		<td><h4>{{ champion2.adRange }}</h4></td>
+		{% if difference.17 < 0 %}
+                        <td><h4><b style="color: red;">{{ difference.17 }}</b></h4></td></tr>
+                {% else %}
+                        <td><h4><b style="color: green;">{{ difference.17 }}</b></h4></td></tr>
+                {% endif %}
+          </table>
+        {% endif %}
+      {% endif %}
+{% endblock %}
+	

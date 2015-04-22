@@ -1,0 +1,29 @@
+{% extends 'ChampData/theme.html' %}
+
+{% block container %}
+      <h1 style="text-align: center;">Champion Comparison</h1>
+        {% if champion1 %}
+	 {% if champion2 %}
+          <table id="comparison_table" class="table table-hover">
+            <script type="text/javascript">
+            output = "<tr><th><h4>Name:</h4></th>
+        <td><h4><h4>{{ champion1.name }}</h4></td>
+        <td><h4>{{ champion2.name }}</h4></td></tr>
+            <tr><th><h4>Style:</h4></th>
+        <td><h4>{{ champion1.style }}</h4></td>
+        <td><h4>{{ champion2.style }}</h4></td></tr>";
+
+fields = ['hp', 'hpPlus', 'hp5', 'hp5Plus','mp', 'mpPlus', 'mp5', 'mp5Plus', 'ad', 'adPlus', 'aSpeed', 'asPlus', 'ar', 'arPlus', 'mr', 'mrPlus', 'ms', 'adRange'];
+headers = ['Name', 'Style', 'Health', 'Health per level', 'Health Regen per 5', 'Mana', 'Mana per level', 'Mana regen per 5', 'Mana regen per 5 per level', 'Attack Damage', 'Attack Damage per level', 'Attack Speed', 'Attack Speed per level', 'Armor', 'Armor per level', 'Magic Resist', 'Magic Resist per level', 'Movement Speed', 'Attack Range'];
+for (i = 0; i < 18; i++)
+{
+    output += "<tr><th><h4>" + headers[i+2] + ":</h4></th><td><h4>{{ champion1." + fields[i] + "}}</h4></td><td><h4>{{ " + "champion2." + fields[i] + " }}</h4></td>{% if difference." + i + " < 0 %}<td><h4><b style=\"color: red;\">{{ difference." + i + " }}</b></h4></td></tr>{% else %}<td><h4><b style=\"color: green;\">{{ difference." + i + " }}</b></h4></td></tr>{% endif %}";
+}
+
+document.getElementById("comparison_table").innerHTML = output;
+</script>
+          </table>
+        {% endif %}
+      {% endif %}
+{% endblock %}
+	

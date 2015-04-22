@@ -1,0 +1,16 @@
+
+{% extends 'ChampData/theme.html' %}
+
+{% block container %}
+      <h1 style="text-align: center;">List of Champions</h1>
+        {% if champion_list %}
+          <ul>
+            {% for champion_name in champion_list %}	
+              <li style="display: inline;"><b><a href="{% url 'ChampData:detail' champion_name %}">{{ champion_name }}</a> | </b></li>
+            {% endfor %}
+          </ul>
+        {% else %}
+          <p>No Champions in list</p>
+        {% endif %}
+{% endblock %}
+

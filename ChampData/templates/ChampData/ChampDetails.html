@@ -1,0 +1,29 @@
+{% extends 'ChampData/theme.html' %}
+{% load staticfiles %}
+{% block container %}
+      <h1 style="text-align: center;">Champion Details</h1>
+      <img style="float: left;" src="{% static image_url %}"/>
+        {% if champion_name %}
+          <table class="table table-hover">
+            <tr><th><h4>Name:</h4></th><td><h4>{{ champion_name }}</h4></td></tr>
+            <tr><th><h4>Health:</h4></th><td><h4>{{ hp }}</h4></td></tr>
+            <tr><th><h4>Health per level:</h4></th><td><h4>{{ hpPlus }}</h4></td></tr>
+            <tr><th><h4>Health Regen per 5:</h4></th><td><h4>{{ hp5 }}</h4></td></tr>
+            <tr><th><h4>Health Regen per 5 per level:</h4></th><td><h4>{{ hp5Plus }}</h4></td></tr>
+            <tr><th><h4>Mana:</h4></th><td><h4>{{ mp }}</h4></td></tr>
+            <tr><th><h4>Mana per level:</h4></th><td><h4>{{ mpPlus }}</h4></td></tr>
+            <tr><th><h4>Mana regen per 5:</h4></th><td><h4>{{ mp5 }}</h4></td></tr>
+            <tr><th><h4>Mana regen per 5 per level:</h4></th><td><h4>{{ mp5Plus }}</h4></td></tr>
+            <tr><th><h4>Attack Damage:</h4></th> <td><h4>{{ ad }}</h4></td></tr>
+            <tr><th><h4>Attack Damage per level:</h4></th><td><h4>{{ adPlus }}</h4></td></tr>
+            <tr><th><h4>Attack Speed:</h4></th> <td><h4>{{ as }}</h4></td></tr>
+            <tr><th><h4>Attack Speed per level:</h4></th> <td><h4>{{ asPlus }}</h4></td></tr>
+            <tr><th><h4>Armor:</h4></th> <td><h4>{{ ar }}</h4></td></tr>
+            <tr><th><h4>Armor per level:</h4></th> <td><h4>{{ arPlus }}</h4></td></tr>
+            <tr><th><h4>Magic Resist:</h4></th> <td><h4>{{ mr }}</h4></td></tr>
+            <tr><th><h4>Magic Resist per level:</h4></th> <td><h4>{{ mrPlus }}</h4></td></tr>
+            <tr><th><h4>Movement Speed:</h4></th> <td><h4>{{ ms }}</h4></td></tr>
+            <tr><th><h4>Attack Range:</h4></th> <td><h4>{{ range }}</h4></td></tr>
+          </table>
+        {% endif %}
+{% endblock %}
