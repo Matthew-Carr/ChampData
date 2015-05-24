@@ -1,0 +1,27 @@
+{% extends 'ChampData/theme.html' %}
+
+{% block container %}
+	<h1>{{ summoner_name }}</h1>
+	<h2>{{ summoner_id }}</h2>
+	<h2>{{ rank }}</h2>
+	<span style="float: left; margin-left: 30px;">
+    <p><b>Coop vs AI:</b></p> 
+   		<p>5v5: wins: {{ coop_vs_ai_5x5.wins }} losses: {{ coop_vs_ai_5x5.losses }}</p>
+   		<p>3v3: wins: {{ coop_vs_ai_3x3.wins }} losses: {{ coop_vs_ai_3x3.losses }}</p>
+   	</span>
+   	<span style="float: left; margin-left: 30px;">
+    <p><b>Ranked teams:</b></p>
+    	<p>3v3: {{ ranked_team_3x3.wins }}</p>
+        <p>5v5: {{ ranked_team_5x5.wins }}</p>
+    </span>
+    <span style="float: left; margin-left: 30px;">
+    <p><b>Normals:</b></p> 
+    	<p>3v3: {{ unranked_3v3.wins }}</p>
+    	<p>5v5: {{ unranked_5v5.wins }}</p>
+    </span>
+    <span style="float: left; margin-left: 30px;">
+    <p><b>Ranked Solo:</b></p>
+    	<p>wins:{{ ranked_solo_5x5.wins }}</p>
+    </span>
+{% endblock %}
+
