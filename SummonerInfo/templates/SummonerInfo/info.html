@@ -1,27 +1,76 @@
 {% extends 'ChampData/theme.html' %}
 
+
+
 {% block container %}
+<style>
+table, td, th {
+  vertical-align: center;
+  text-align: center;
+}
+
+</style>
+
 	<h1>{{ summoner_name }}</h1>
 	<h2>{{ summoner_id }}</h2>
 	<h2>{{ rank }}</h2>
-	<span style="float: left; margin-left: 30px;">
-    <p><b>Coop vs AI:</b></p> 
-   		<p>5v5: wins: {{ coop_vs_ai_5x5.wins }} losses: {{ coop_vs_ai_5x5.losses }}</p>
-   		<p>3v3: wins: {{ coop_vs_ai_3x3.wins }} losses: {{ coop_vs_ai_3x3.losses }}</p>
-   	</span>
-   	<span style="float: left; margin-left: 30px;">
-    <p><b>Ranked teams:</b></p>
-    	<p>3v3: {{ ranked_team_3x3.wins }}</p>
-        <p>5v5: {{ ranked_team_5x5.wins }}</p>
-    </span>
-    <span style="float: left; margin-left: 30px;">
-    <p><b>Normals:</b></p> 
-    	<p>3v3: {{ unranked_3v3.wins }}</p>
-    	<p>5v5: {{ unranked_5v5.wins }}</p>
-    </span>
-    <span style="float: left; margin-left: 30px;">
-    <p><b>Ranked Solo:</b></p>
-    	<p>wins:{{ ranked_solo_5x5.wins }}</p>
-    </span>
+
+  <table class="table table-hover">
+      <tr>
+        <th>Queue</th>
+        <th>Wins</th>
+        <th>Losses</th>
+      </tr>
+      <tr>
+        <td><p>Ranked Solo</p></td>
+        <td><p>{{ ranked_solo_5x5.wins }}</p></td>
+        <td><p>{{ ranked_solo_5x5.losses }}</p></td>
+      </tr>
+      <tr>
+        <td><p>Normal</p></td>
+        <td><p>{{ unranked_5x5.wins }}</p></td>
+        <td><p>{{ unranked_5x5.aggregatedStats.totalSessionsLost }}</p></td>
+      </tr> 
+      <tr>
+        <td><p>Normal 5v5</p></td>
+        <td><p>{{ unranked_5x5.wins }}</p></td>
+        <td><p>{{ unranked_5x5.aggregatedStats.totalSessionsLost }}</p></td>
+      </tr>
+      <tr>
+        <td><p>ARAM</p></td>
+        <td><p>{{ ARAM.wins }}</p></td>
+        <td><p>{{ ARAM.aggregatedStats.totalSessionsLost }}</p></td>
+      </tr>   
+      <tr>
+        <td><p>Normal 3v3</p></td>
+        <td><p>{{ unranked_3x3.wins }}</p></td>
+        <td><p>{{ unranked_3x3.aggregatedStats.totalSessionsLost }}</p></td>
+      </tr>
+      <tr>
+        <td><p>Team Builder</p></td>
+        <td><p>{{ CAP5x5.wins }}</p></td>
+        <td><p>{{ CAP5x5.aggregatedStats.totalSessionsLost }}</p></td>
+      </tr>
+      <tr>
+        <td><p>Ultra Rapid Fire</p></td>
+        <td><p>{{ URF.wins }}</p></td>
+        <td><p>{{ URF.aggregatedStats.totalSessionsLost }}</p></td>
+      </tr>
+      <tr>
+        <td><p>Nemesis Draft</p></td>
+        <td><p>{{ counterpick.wins }}</p></td>
+        <td><p>{{ counterpick.aggregatedStats.totalSessionsLost }}</p></td>
+      </tr>
+      <tr>
+        <td><p>Co-op vs AI 5v5</p></td>
+        <td><p>{{ coop_vs_ai_5x5.wins }}</p></td>
+        <td><p>{{ coop_vs_ai_5x5.aggregatedStats.totalSessionsLost }}</p></td>
+      </tr>
+      <tr>
+        <td><p>Co-op vs. AI 3v3</p></td>
+        <td><p>{{ coop_vs_ai_3x3.wins }}</p></td>
+        <td><p>{{ coop_vs_ai_3x3.aggregatedStats.totalSessionsLost }}</p></td>
+      </tr>
+  </table>
 {% endblock %}
 

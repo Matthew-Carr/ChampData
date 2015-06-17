@@ -7,4 +7,5 @@ urlpatterns = [
     url(r'^championdata/', include('ChampData.urls', namespace="ChampData")),
     url(r'^about/', include('myInfo.urls')),
     url(r'^admin/', include(admin.site.urls)),
+    url(r'^info/', include('SummonerInfo.urls'))
 ]

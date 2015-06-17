@@ -39,6 +39,7 @@ INSTALLED_APPS = (
     'django.contrib.staticfiles',
     'ChampData',
     'myInfo',
+    'SummonerInfo',
 )
 
 MIDDLEWARE_CLASSES = (
